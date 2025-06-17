@@ -1,0 +1,116 @@
+[2025-06-16T15:34:25.128+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-16T15:34:25.151+0000] {__init__.py:54} DEBUG - Loading core task runner: StandardTaskRunner
+[2025-06-16T15:34:25.172+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-16T15:34:25.179+0000] {base_task_runner.py:73} DEBUG - Planning to run as the  user
+[2025-06-16T15:34:25.189+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-16T15:34:25.231+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-16T15:34:25.242+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-16T15:34:25.243+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Task Instance Not Running' PASSED: True, Task is not in running state.
+[2025-06-16T15:34:25.243+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Task Instance State' PASSED: True, Task state queued was valid.
+[2025-06-16T15:34:25.243+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]>
+[2025-06-16T15:34:25.244+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-16T15:34:25.278+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-16T15:34:25.284+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Pool Slots Available' PASSED: True, There are enough open slots in default_pool to execute the task
+[2025-06-16T15:34:25.284+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]> dependency 'Task Concurrency' PASSED: True, Task concurrency is not set.
+[2025-06-16T15:34:25.285+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [queued]>
+[2025-06-16T15:34:25.285+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-16T15:34:25.304+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_dim_shipmode> on 2025-06-16 15:33:53.359753+00:00
+[2025-06-16T15:34:25.315+0000] {standard_task_runner.py:63} INFO - Started process 1534 to run task
+[2025-06-16T15:34:25.319+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'transform.transform_dim_shipmode', 'manual__2025-06-16T15:33:53.359753+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmp2r6bne7d']
+[2025-06-16T15:34:25.320+0000] {standard_task_runner.py:91} INFO - Job 73: Subtask transform.transform_dim_shipmode
+[2025-06-16T15:34:25.322+0000] {cli_action_loggers.py:70} DEBUG - Calling callbacks: [<function default_action_log at 0x7fbe3032d750>]
+[2025-06-16T15:34:25.435+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-16T15:34:25.444+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-16T15:33:53.359753+00:00 [running]> on host cdd5f2df74dd
+[2025-06-16T15:34:25.444+0000] {settings.py:363} DEBUG - Disposing DB connection pool (PID 1534)
+[2025-06-16T15:34:25.445+0000] {settings.py:250} DEBUG - Setting up DB connection pool (PID 1534)
+[2025-06-16T15:34:25.446+0000] {settings.py:298} DEBUG - settings.prepare_engine_args(): Using NullPool
+[2025-06-16T15:34:25.499+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-16T15:34:25.502+0000] {taskinstance.py:1845} DEBUG - Clearing XCom data
+[2025-06-16T15:34:25.518+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields.write with retries. Try 1 of 3
+[2025-06-16T15:34:25.548+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields._do_delete_old_records with retries. Try 1 of 3
+[2025-06-16T15:34:25.565+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='transform.transform_dim_shipmode' AIRFLOW_CTX_EXECUTION_DATE='2025-06-16T15:33:53.359753+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-16T15:33:53.359753+00:00'
+[2025-06-16T15:34:25.566+0000] {__init__.py:115} DEBUG - Preparing lineage inlets and outlets
+[2025-06-16T15:34:25.567+0000] {__init__.py:154} DEBUG - inlets: [], outlets: []
+[2025-06-16T15:34:25.569+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-16T15:34:25.596+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-16T15:34:25.603+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-16T15:34:25.622+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-16T15:34:25.632+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-16T15:34:25.790+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-16T15:34:25.792+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "dim_shipmode_pkey"
+DETAIL:  Key (shipmode_id)=(1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform_dim_shipmode.py", line 27, in transform_dim_shipmode
+    warehouse_operator.save_data_to_postgres(
+  File "/opt/airflow/plugins/postgresql_operator.py", line 46, in save_data_to_postgres
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 2987, in to_sql
+    return sql.to_sql(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 695, in to_sql
+    return pandas_sql.to_sql(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 1738, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 1335, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 1325, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 946, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 869, in _execute_insert_multi
+    result = conn.execute(stmt)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "dim_shipmode_pkey"
+DETAIL:  Key (shipmode_id)=(1) already exists.
+
+[SQL: INSERT INTO warehouse.dim_shipmode (shipmode_id, ship_mode) VALUES (%(shipmode_id_m0)s, %(ship_mode_m0)s), (%(shipmode_id_m1)s, %(ship_mode_m1)s), (%(shipmode_id_m2)s, %(ship_mode_m2)s), (%(shipmode_id_m3)s, %(ship_mode_m3)s)]
+[parameters: {'shipmode_id_m0': 1, 'ship_mode_m0': 'Standard Class', 'shipmode_id_m1': 2, 'ship_mode_m1': 'Same Day', 'shipmode_id_m2': 3, 'ship_mode_m2': 'Second Class', 'shipmode_id_m3': 4, 'ship_mode_m3': 'First Class'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2025-06-16T15:34:25.848+0000] {taskinstance.py:562} DEBUG - Task Duration set to 0.604266
+[2025-06-16T15:34:25.852+0000] {taskinstance.py:584} DEBUG - Clearing next_method and next_kwargs.
+[2025-06-16T15:34:25.853+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=globalsuperstore, task_id=transform.transform_dim_shipmode, run_id=manual__2025-06-16T15:33:53.359753+00:00, execution_date=20250616T153353, start_date=20250616T153425, end_date=20250616T153425
+[2025-06-16T15:34:25.869+0000] {cli_action_loggers.py:88} DEBUG - Calling callbacks: []
+[2025-06-16T15:34:25.871+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 73 for task transform.transform_dim_shipmode ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "dim_shipmode_pkey"
+DETAIL:  Key (shipmode_id)=(1) already exists.
+
+[SQL: INSERT INTO warehouse.dim_shipmode (shipmode_id, ship_mode) VALUES (%(shipmode_id_m0)s, %(ship_mode_m0)s), (%(shipmode_id_m1)s, %(ship_mode_m1)s), (%(shipmode_id_m2)s, %(ship_mode_m2)s), (%(shipmode_id_m3)s, %(ship_mode_m3)s)]
+[parameters: {'shipmode_id_m0': 1, 'ship_mode_m0': 'Standard Class', 'shipmode_id_m1': 2, 'ship_mode_m1': 'Same Day', 'shipmode_id_m2': 3, 'ship_mode_m2': 'Second Class', 'shipmode_id_m3': 4, 'ship_mode_m3': 'First Class'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 1534)
+[2025-06-16T15:34:25.902+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-16T15:34:25.926+0000] {dagrun.py:931} DEBUG - number of tis tasks for <DagRun globalsuperstore @ 2025-06-16 15:33:53.359753+00:00: manual__2025-06-16T15:33:53.359753+00:00, state:running, queued_at: 2025-06-16 15:33:53.621359+00:00. externally triggered: True>: 6 task(s)
+[2025-06-16T15:34:25.927+0000] {dagrun.py:952} DEBUG - number of scheduleable tasks for <DagRun globalsuperstore @ 2025-06-16 15:33:53.359753+00:00: manual__2025-06-16T15:33:53.359753+00:00, state:running, queued_at: 2025-06-16 15:33:53.621359+00:00. externally triggered: True>: 0 task(s)
+[2025-06-16T15:34:25.927+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-16T15:34:25.930+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,66 @@
+[2025-06-15T08:21:16.876+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-15T08:21:16.925+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:20:20.407060+00:00 [queued]>
+[2025-06-15T08:21:16.956+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:20:20.407060+00:00 [queued]>
+[2025-06-15T08:21:16.958+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-15T08:21:16.978+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load.transform_fact_sales> on 2025-06-15 08:20:20.407060+00:00
+[2025-06-15T08:21:16.986+0000] {standard_task_runner.py:63} INFO - Started process 476 to run task
+[2025-06-15T08:21:16.990+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'load.transform_fact_sales', 'manual__2025-06-15T08:20:20.407060+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmpv8wyd3j8']
+[2025-06-15T08:21:16.993+0000] {standard_task_runner.py:91} INFO - Job 87: Subtask load.transform_fact_sales
+[2025-06-15T08:21:17.054+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:20:20.407060+00:00 [running]> on host f3cca4675eb8
+[2025-06-15T08:21:17.235+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='load.transform_fact_sales' AIRFLOW_CTX_EXECUTION_DATE='2025-06-15T08:20:20.407060+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-15T08:20:20.407060+00:00'
+[2025-06-15T08:21:17.236+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-15T08:21:17.264+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:21:17.272+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:21:17.279+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:21:17.293+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:21:17.384+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:21:17.388+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:21:17.472+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:21:17.480+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:21:17.485+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-15T08:21:17.486+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in execute
+    cur.execute(*args, **kwargs)
+psycopg2.errors.UndefinedColumn: column "date_id" does not exist
+LINE 1: SELECT Date_ID, Order_Date FROM warehouse.dim_date
+               ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform_fact_sales.py", line 16, in transform_fact_sales
+    df_date = warehouse_operator.get_data_to_pd('SELECT Date_ID, Order_Date FROM warehouse.dim_date')
+  File "/opt/airflow/plugins/postgresql_operator.py", line 15, in get_data_to_pd
+    return self.hook.get_pandas_df(sql)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 263, in get_pandas_df
+    return psql.read_sql(sql, con=conn, params=parameters, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 564, in read_sql
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2078, in read_query
+    cursor = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2030, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT Date_ID, Order_Date FROM warehouse.dim_date': column "date_id" does not exist
+LINE 1: SELECT Date_ID, Order_Date FROM warehouse.dim_date
+               ^
+
+[2025-06-15T08:21:17.507+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=globalsuperstore, task_id=load.transform_fact_sales, run_id=manual__2025-06-15T08:20:20.407060+00:00, execution_date=20250615T082020, start_date=20250615T082116, end_date=20250615T082117
+[2025-06-15T08:21:17.519+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 87 for task load.transform_fact_sales (Execution failed on sql 'SELECT Date_ID, Order_Date FROM warehouse.dim_date': column "date_id" does not exist
+LINE 1: SELECT Date_ID, Order_Date FROM warehouse.dim_date
+               ^
+; 476)
+[2025-06-15T08:21:17.564+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-15T08:21:17.584+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-15T08:21:17.586+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

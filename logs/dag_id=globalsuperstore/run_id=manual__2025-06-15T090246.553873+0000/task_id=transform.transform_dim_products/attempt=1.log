@@ -1,0 +1,26 @@
+[2025-06-15T09:03:22.732+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-15T09:03:22.788+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-15T09:02:46.553873+00:00 [queued]>
+[2025-06-15T09:03:22.796+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-15T09:02:46.553873+00:00 [queued]>
+[2025-06-15T09:03:22.797+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-15T09:03:22.814+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_dim_products> on 2025-06-15 09:02:46.553873+00:00
+[2025-06-15T09:03:22.825+0000] {standard_task_runner.py:63} INFO - Started process 512 to run task
+[2025-06-15T09:03:22.834+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'transform.transform_dim_products', 'manual__2025-06-15T09:02:46.553873+00:00', '--job-id', '317', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmp2cocd9vn']
+[2025-06-15T09:03:22.838+0000] {standard_task_runner.py:91} INFO - Job 317: Subtask transform.transform_dim_products
+[2025-06-15T09:03:22.900+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-15T09:02:46.553873+00:00 [running]> on host f3cca4675eb8
+[2025-06-15T09:03:23.024+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='transform.transform_dim_products' AIRFLOW_CTX_EXECUTION_DATE='2025-06-15T09:02:46.553873+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-15T09:02:46.553873+00:00'
+[2025-06-15T09:03:23.025+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-15T09:03:23.047+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T09:03:23.057+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T09:03:23.065+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T09:03:23.089+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T09:03:23.125+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T09:03:23.131+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T09:03:23.143+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T09:03:23.149+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T09:03:24.794+0000] {logging_mixin.py:188} INFO - ✔ Đã transform và lưu dữ liệu vào warehouse.dim_product
+[2025-06-15T09:03:24.796+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-15T09:03:24.798+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-15T09:03:24.816+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=globalsuperstore, task_id=transform.transform_dim_products, run_id=manual__2025-06-15T09:02:46.553873+00:00, execution_date=20250615T090246, start_date=20250615T090322, end_date=20250615T090324
+[2025-06-15T09:03:24.894+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-15T09:03:24.945+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-15T09:03:24.981+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

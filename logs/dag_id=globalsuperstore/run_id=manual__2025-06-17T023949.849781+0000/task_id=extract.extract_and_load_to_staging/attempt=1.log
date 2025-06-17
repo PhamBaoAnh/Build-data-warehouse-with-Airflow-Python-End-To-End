@@ -1,0 +1,321 @@
+[2025-06-17T02:39:50.718+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-17T02:39:50.741+0000] {__init__.py:54} DEBUG - Loading core task runner: StandardTaskRunner
+[2025-06-17T02:39:50.756+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-17T02:39:50.768+0000] {base_task_runner.py:73} DEBUG - Planning to run as the  user
+[2025-06-17T02:39:50.775+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-17T02:39:50.818+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Task Instance Not Running' PASSED: True, Task is not in running state.
+[2025-06-17T02:39:50.819+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Trigger Rule' PASSED: True, The task instance did not have any upstream tasks.
+[2025-06-17T02:39:50.825+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Task Instance State' PASSED: True, Task state queued was valid.
+[2025-06-17T02:39:50.825+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:39:50.826+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:39:50.826+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]>
+[2025-06-17T02:39:50.834+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Pool Slots Available' PASSED: True, There are enough open slots in default_pool to execute the task
+[2025-06-17T02:39:50.835+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Task Concurrency' PASSED: True, Task concurrency is not set.
+[2025-06-17T02:39:50.836+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Trigger Rule' PASSED: True, The task instance did not have any upstream tasks.
+[2025-06-17T02:39:50.838+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:39:50.838+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:39:50.839+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [queued]>
+[2025-06-17T02:39:50.839+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-17T02:39:50.853+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract.extract_and_load_to_staging> on 2025-06-17 02:39:49.849781+00:00
+[2025-06-17T02:39:50.861+0000] {standard_task_runner.py:63} INFO - Started process 672 to run task
+[2025-06-17T02:39:50.865+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'extract.extract_and_load_to_staging', 'manual__2025-06-17T02:39:49.849781+00:00', '--job-id', '420', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmpkno33msa']
+[2025-06-17T02:39:50.867+0000] {standard_task_runner.py:91} INFO - Job 420: Subtask extract.extract_and_load_to_staging
+[2025-06-17T02:39:50.868+0000] {cli_action_loggers.py:70} DEBUG - Calling callbacks: [<function default_action_log at 0x7f821ad2d750>]
+[2025-06-17T02:39:50.925+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-17T02:39:50.932+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.extract.extract_and_load_to_staging manual__2025-06-17T02:39:49.849781+00:00 [running]> on host 9b7c60adfed6
+[2025-06-17T02:39:50.933+0000] {settings.py:363} DEBUG - Disposing DB connection pool (PID 672)
+[2025-06-17T02:39:50.934+0000] {settings.py:250} DEBUG - Setting up DB connection pool (PID 672)
+[2025-06-17T02:39:50.934+0000] {settings.py:298} DEBUG - settings.prepare_engine_args(): Using NullPool
+[2025-06-17T02:39:50.983+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-17T02:39:51.001+0000] {taskinstance.py:1845} DEBUG - Clearing XCom data
+[2025-06-17T02:39:51.042+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields.write with retries. Try 1 of 3
+[2025-06-17T02:39:51.085+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields._do_delete_old_records with retries. Try 1 of 3
+[2025-06-17T02:39:51.103+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='extract.extract_and_load_to_staging' AIRFLOW_CTX_EXECUTION_DATE='2025-06-17T02:39:49.849781+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-17T02:39:49.849781+00:00'
+[2025-06-17T02:39:51.104+0000] {__init__.py:115} DEBUG - Preparing lineage inlets and outlets
+[2025-06-17T02:39:51.105+0000] {__init__.py:154} DEBUG - inlets: [], outlets: []
+[2025-06-17T02:39:51.106+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-17T02:39:51.140+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-17T02:39:51.144+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Category...
+[2025-06-17T02:39:51.154+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:39:51.179+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:39:51.296+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Category (3 dòng)
+[2025-06-17T02:39:51.297+0000] {logging_mixin.py:188} INFO - ✔ Đã load Category → staging.stg_Category
+[2025-06-17T02:39:51.298+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Customer...
+[2025-06-17T02:39:51.310+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:39:51.321+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:39:52.287+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Customer (1590 dòng)
+[2025-06-17T02:39:52.288+0000] {logging_mixin.py:188} INFO - ✔ Đã load Customer → staging.stg_Customer
+[2025-06-17T02:39:52.288+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Order_Details...
+[2025-06-17T02:39:52.303+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:39:52.315+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:39:55.902+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 1 of 3
+[2025-06-17T02:39:55.921+0000] {retries.py:91} DEBUG - Running Job._update_heartbeat with retries. Try 1 of 3
+[2025-06-17T02:39:55.952+0000] {job.py:214} DEBUG - [heartbeat]
+[2025-06-17T02:40:00.969+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 1 of 3
+[2025-06-17T02:40:01.222+0000] {retries.py:91} DEBUG - Running Job._update_heartbeat with retries. Try 1 of 3
+[2025-06-17T02:40:01.342+0000] {job.py:214} DEBUG - [heartbeat]
+[2025-06-17T02:40:06.382+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 1 of 3
+[2025-06-17T02:40:06.463+0000] {retries.py:91} DEBUG - Running Job._update_heartbeat with retries. Try 1 of 3
+[2025-06-17T02:40:06.545+0000] {job.py:214} DEBUG - [heartbeat]
+[2025-06-17T02:40:11.550+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 1 of 3
+[2025-06-17T02:40:22.214+0000] {before_sleep.py:65} DEBUG - Retrying <unknown> in 0.17161766626211494 seconds as it raised OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8).
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/retries.py", line 98, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 316, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-06-17T02:40:26.073+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 2 of 3
+[2025-06-17T02:40:37.047+0000] {before_sleep.py:65} DEBUG - Retrying <unknown> in 0.40620027657180424 seconds as it raised OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8).
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/retries.py", line 98, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 316, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-06-17T02:40:40.583+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 3 of 3
+[2025-06-17T02:40:47.693+0000] {retries.py:91} DEBUG - Running Job._update_heartbeat with retries. Try 1 of 3
+[2025-06-17T02:40:47.727+0000] {job.py:214} DEBUG - [heartbeat]
+[2025-06-17T02:40:49.176+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Order_Details (51252 dòng)
+[2025-06-17T02:40:49.181+0000] {logging_mixin.py:188} INFO - ✔ Đã load Order_Details → staging.stg_Order_Details
+[2025-06-17T02:40:49.181+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Orders...
+[2025-06-17T02:40:49.207+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:40:49.311+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:40:52.743+0000] {retries.py:91} DEBUG - Running Job._fetch_from_db with retries. Try 1 of 3
+[2025-06-17T02:40:52.753+0000] {retries.py:91} DEBUG - Running Job._update_heartbeat with retries. Try 1 of 3
+[2025-06-17T02:40:52.770+0000] {job.py:214} DEBUG - [heartbeat]
+[2025-06-17T02:40:55.610+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Orders (25035 dòng)
+[2025-06-17T02:40:55.611+0000] {logging_mixin.py:188} INFO - ✔ Đã load Orders → staging.stg_Orders
+[2025-06-17T02:40:55.612+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Product...
+[2025-06-17T02:40:55.618+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:40:55.628+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:40:56.761+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Product (10292 dòng)
+[2025-06-17T02:40:56.762+0000] {logging_mixin.py:188} INFO - ✔ Đã load Product → staging.stg_Product
+[2025-06-17T02:40:56.762+0000] {logging_mixin.py:188} INFO - ⏳ Đang tải dữ liệu từ bảng Sub_Category...
+[2025-06-17T02:40:56.768+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2025-06-17T02:40:56.776+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-17T02:40:56.811+0000] {logging_mixin.py:188} INFO - ✔ Đã lưu dữ liệu vào staging.stg_Sub_Category (17 dòng)
+[2025-06-17T02:40:56.811+0000] {logging_mixin.py:188} INFO - ✔ Đã load Sub_Category → staging.stg_Sub_Category
+[2025-06-17T02:40:56.812+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-17T02:40:56.812+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-17T02:40:56.813+0000] {__init__.py:77} DEBUG - Lineage called with inlets: [], outlets: []
+[2025-06-17T02:40:56.827+0000] {taskinstance.py:584} DEBUG - Clearing next_method and next_kwargs.
+[2025-06-17T02:40:56.828+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=globalsuperstore, task_id=extract.extract_and_load_to_staging, run_id=manual__2025-06-17T02:39:49.849781+00:00, execution_date=20250617T023949, start_date=20250617T023950, end_date=20250617T024056
+[2025-06-17T02:40:56.828+0000] {taskinstance.py:562} DEBUG - Task Duration set to 66.000822
+[2025-06-17T02:40:56.847+0000] {cli_action_loggers.py:88} DEBUG - Calling callbacks: []
+[2025-06-17T02:40:56.890+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-17T02:40:56.957+0000] {dagrun.py:931} DEBUG - number of tis tasks for <DagRun globalsuperstore @ 2025-06-17 02:39:49.849781+00:00: manual__2025-06-17T02:39:49.849781+00:00, state:running, queued_at: 2025-06-17 02:39:49.864993+00:00. externally triggered: True>: 7 task(s)
+[2025-06-17T02:40:56.959+0000] {dagrun.py:952} DEBUG - number of scheduleable tasks for <DagRun globalsuperstore @ 2025-06-17 02:39:49.849781+00:00: manual__2025-06-17T02:39:49.849781+00:00, state:running, queued_at: 2025-06-17 02:39:49.864993+00:00. externally triggered: True>: 6 task(s)
+[2025-06-17T02:40:56.963+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_customers manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.964+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_customers manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.965+0000] {taskinstance.py:2076} DEBUG - Dependencies all met for dep_context=None ti=<TaskInstance: globalsuperstore.transform.transform_dim_customers manual__2025-06-17T02:39:49.849781+00:00 [None]>
+[2025-06-17T02:40:56.966+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.967+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.967+0000] {taskinstance.py:2076} DEBUG - Dependencies all met for dep_context=None ti=<TaskInstance: globalsuperstore.transform.transform_dim_products manual__2025-06-17T02:39:49.849781+00:00 [None]>
+[2025-06-17T02:40:56.968+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_locations manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.968+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_locations manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.968+0000] {taskinstance.py:2076} DEBUG - Dependencies all met for dep_context=None ti=<TaskInstance: globalsuperstore.transform.transform_dim_locations manual__2025-06-17T02:39:49.849781+00:00 [None]>
+[2025-06-17T02:40:56.969+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.969+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.970+0000] {taskinstance.py:2076} DEBUG - Dependencies all met for dep_context=None ti=<TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-17T02:39:49.849781+00:00 [None]>
+[2025-06-17T02:40:56.971+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_date manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.972+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_date manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.972+0000] {taskinstance.py:2076} DEBUG - Dependencies all met for dep_context=None ti=<TaskInstance: globalsuperstore.transform.transform_dim_date manual__2025-06-17T02:39:49.849781+00:00 [None]>
+[2025-06-17T02:40:56.973+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Trigger Rule' PASSED: False, Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 5 non-success(es). upstream_states=_UpstreamTIStates(success=0, skipped=0, failed=0, upstream_failed=0, removed=0, done=0, success_setup=0, skipped_setup=0), upstream_task_ids={'transform.transform_dim_locations', 'transform.transform_dim_date', 'transform.transform_dim_shipmode', 'transform.transform_dim_products', 'transform.transform_dim_customers'}
+[2025-06-17T02:40:56.974+0000] {taskinstance.py:2066} DEBUG - Dependencies not met for <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-17T02:39:49.849781+00:00 [None]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 5 non-success(es). upstream_states=_UpstreamTIStates(success=0, skipped=0, failed=0, upstream_failed=0, removed=0, done=0, success_setup=0, skipped_setup=0), upstream_task_ids={'transform.transform_dim_locations', 'transform.transform_dim_date', 'transform.transform_dim_shipmode', 'transform.transform_dim_products', 'transform.transform_dim_customers'}
+[2025-06-17T02:40:56.974+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-17T02:40:56.975+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-17T02:39:49.849781+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-17T02:40:56.993+0000] {taskinstance.py:3503} INFO - 5 downstream tasks scheduled from follow-on schedule check
+[2025-06-17T02:40:56.996+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

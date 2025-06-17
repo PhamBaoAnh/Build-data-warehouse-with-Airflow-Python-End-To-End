@@ -1,0 +1,55 @@
+[2025-06-15T16:25:02.832+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-15T16:25:02.861+0000] {__init__.py:54} DEBUG - Loading core task runner: StandardTaskRunner
+[2025-06-15T16:25:02.886+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-15T16:25:02.892+0000] {base_task_runner.py:73} DEBUG - Planning to run as the  user
+[2025-06-15T16:25:02.908+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-15T16:25:02.975+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Task Instance Not Running' PASSED: True, Task is not in running state.
+[2025-06-15T16:25:02.977+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Task Instance State' PASSED: True, Task state queued was valid.
+[2025-06-15T16:25:02.986+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-15T16:25:02.987+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-15T16:25:02.988+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]>
+[2025-06-15T16:25:02.997+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Pool Slots Available' PASSED: True, There are enough open slots in default_pool to execute the task
+[2025-06-15T16:25:02.998+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Task Concurrency' PASSED: True, Task concurrency is not set.
+[2025-06-15T16:25:03.004+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-15T16:25:03.004+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-15T16:25:03.005+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [queued]>
+[2025-06-15T16:25:03.006+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-15T16:25:03.022+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_dim_shipmode> on 2025-06-15 16:24:32.749940+00:00
+[2025-06-15T16:25:03.046+0000] {standard_task_runner.py:63} INFO - Started process 867 to run task
+[2025-06-15T16:25:03.051+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'transform.transform_dim_shipmode', 'manual__2025-06-15T16:24:32.749940+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmprv7z9jjv']
+[2025-06-15T16:25:03.053+0000] {standard_task_runner.py:91} INFO - Job 42: Subtask transform.transform_dim_shipmode
+[2025-06-15T16:25:03.054+0000] {cli_action_loggers.py:70} DEBUG - Calling callbacks: [<function default_action_log at 0x7f1a51c99750>]
+[2025-06-15T16:25:03.146+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-15T16:25:03.153+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.transform.transform_dim_shipmode manual__2025-06-15T16:24:32.749940+00:00 [running]> on host a40e01b9e58f
+[2025-06-15T16:25:03.153+0000] {settings.py:363} DEBUG - Disposing DB connection pool (PID 867)
+[2025-06-15T16:25:03.154+0000] {settings.py:250} DEBUG - Setting up DB connection pool (PID 867)
+[2025-06-15T16:25:03.155+0000] {settings.py:298} DEBUG - settings.prepare_engine_args(): Using NullPool
+[2025-06-15T16:25:03.198+0000] {taskinstance.py:1042} DEBUG - previous_execution_date was called
+[2025-06-15T16:25:03.201+0000] {taskinstance.py:1845} DEBUG - Clearing XCom data
+[2025-06-15T16:25:03.217+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields.write with retries. Try 1 of 3
+[2025-06-15T16:25:03.269+0000] {retries.py:91} DEBUG - Running RenderedTaskInstanceFields._do_delete_old_records with retries. Try 1 of 3
+[2025-06-15T16:25:03.287+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='transform.transform_dim_shipmode' AIRFLOW_CTX_EXECUTION_DATE='2025-06-15T16:24:32.749940+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-15T16:24:32.749940+00:00'
+[2025-06-15T16:25:03.288+0000] {__init__.py:115} DEBUG - Preparing lineage inlets and outlets
+[2025-06-15T16:25:03.289+0000] {__init__.py:154} DEBUG - inlets: [], outlets: []
+[2025-06-15T16:25:03.290+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-15T16:25:03.338+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T16:25:03.346+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T16:25:03.376+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T16:25:03.416+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T16:25:03.839+0000] {logging_mixin.py:188} INFO - Đã transform và lưu dữ liệu vào warehouse.dim_shipmode
+[2025-06-15T16:25:03.852+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-15T16:25:03.854+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-15T16:25:03.855+0000] {__init__.py:77} DEBUG - Lineage called with inlets: [], outlets: []
+[2025-06-15T16:25:03.867+0000] {taskinstance.py:584} DEBUG - Clearing next_method and next_kwargs.
+[2025-06-15T16:25:03.868+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=globalsuperstore, task_id=transform.transform_dim_shipmode, run_id=manual__2025-06-15T16:24:32.749940+00:00, execution_date=20250615T162432, start_date=20250615T162502, end_date=20250615T162503
+[2025-06-15T16:25:03.869+0000] {taskinstance.py:562} DEBUG - Task Duration set to 0.879924
+[2025-06-15T16:25:03.881+0000] {cli_action_loggers.py:88} DEBUG - Calling callbacks: []
+[2025-06-15T16:25:03.933+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-15T16:25:03.965+0000] {dagrun.py:931} DEBUG - number of tis tasks for <DagRun globalsuperstore @ 2025-06-15 16:24:32.749940+00:00: manual__2025-06-15T16:24:32.749940+00:00, state:running, queued_at: 2025-06-15 16:24:33.065315+00:00. externally triggered: True>: 6 task(s)
+[2025-06-15T16:25:03.966+0000] {dagrun.py:952} DEBUG - number of scheduleable tasks for <DagRun globalsuperstore @ 2025-06-15 16:24:32.749940+00:00: manual__2025-06-15T16:24:32.749940+00:00, state:running, queued_at: 2025-06-15 16:24:33.065315+00:00. externally triggered: True>: 1 task(s)
+[2025-06-15T16:25:03.967+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T16:24:32.749940+00:00 [None]> dependency 'Previous Dagrun State' PASSED: True, The task did not have depends_on_past set.
+[2025-06-15T16:25:03.968+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T16:24:32.749940+00:00 [None]> dependency 'Not In Retry Period' PASSED: True, The task instance was not marked for retrying.
+[2025-06-15T16:25:03.969+0000] {taskinstance.py:2088} DEBUG - <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T16:24:32.749940+00:00 [None]> dependency 'Trigger Rule' PASSED: False, Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 4 non-success(es). upstream_states=_UpstreamTIStates(success=1, skipped=0, failed=0, upstream_failed=0, removed=0, done=1, success_setup=0, skipped_setup=0), upstream_task_ids={'transform.transform_dim_date', 'transform.transform_dim_shipmode', 'transform.transform_dim_customers', 'transform.transform_dim_locations', 'transform.transform_dim_products'}
+[2025-06-15T16:25:03.970+0000] {taskinstance.py:2066} DEBUG - Dependencies not met for <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T16:24:32.749940+00:00 [None]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 4 non-success(es). upstream_states=_UpstreamTIStates(success=1, skipped=0, failed=0, upstream_failed=0, removed=0, done=1, success_setup=0, skipped_setup=0), upstream_task_ids={'transform.transform_dim_date', 'transform.transform_dim_shipmode', 'transform.transform_dim_customers', 'transform.transform_dim_locations', 'transform.transform_dim_products'}
+[2025-06-15T16:25:03.976+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-15T16:25:03.980+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

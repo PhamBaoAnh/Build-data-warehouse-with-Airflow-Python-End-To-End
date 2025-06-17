@@ -1,0 +1,22 @@
+[2025-06-15T08:47:28.583+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-15T08:47:28.737+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_date scheduled__2024-12-24T00:00:00+00:00 [queued]>
+[2025-06-15T08:47:28.763+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.transform.transform_dim_date scheduled__2024-12-24T00:00:00+00:00 [queued]>
+[2025-06-15T08:47:28.767+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-15T08:47:28.836+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_dim_date> on 2024-12-24 00:00:00+00:00
+[2025-06-15T08:47:28.849+0000] {standard_task_runner.py:63} INFO - Started process 1567 to run task
+[2025-06-15T08:47:28.856+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'transform.transform_dim_date', 'scheduled__2024-12-24T00:00:00+00:00', '--job-id', '196', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmpueadsiig']
+[2025-06-15T08:47:28.861+0000] {standard_task_runner.py:91} INFO - Job 196: Subtask transform.transform_dim_date
+[2025-06-15T08:47:28.968+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.transform.transform_dim_date scheduled__2024-12-24T00:00:00+00:00 [running]> on host f3cca4675eb8
+[2025-06-15T08:47:29.233+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='transform.transform_dim_date' AIRFLOW_CTX_EXECUTION_DATE='2024-12-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-24T00:00:00+00:00'
+[2025-06-15T08:47:29.247+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-15T08:47:29.313+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:47:29.352+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:47:29.385+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:47:29.440+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:47:30.593+0000] {logging_mixin.py:188} INFO - ✔ Đã transform và lưu dữ liệu vào warehouse.dim_date
+[2025-06-15T08:47:30.594+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-15T08:47:30.596+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-15T08:47:30.631+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=globalsuperstore, task_id=transform.transform_dim_date, run_id=scheduled__2024-12-24T00:00:00+00:00, execution_date=20241224T000000, start_date=20250615T084728, end_date=20250615T084730
+[2025-06-15T08:47:30.787+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-15T08:47:30.868+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-15T08:47:30.874+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

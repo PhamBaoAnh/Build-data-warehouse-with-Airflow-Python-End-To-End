@@ -1,0 +1,62 @@
+[2025-06-14T09:15:59.653+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-14T09:15:59.701+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: GlobalSuperStore_dw_etl.transform.transform_dim_customers scheduled__2025-06-13T00:00:00+00:00 [queued]>
+[2025-06-14T09:15:59.709+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: GlobalSuperStore_dw_etl.transform.transform_dim_customers scheduled__2025-06-13T00:00:00+00:00 [queued]>
+[2025-06-14T09:15:59.709+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-14T09:15:59.727+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_dim_customers> on 2025-06-13 00:00:00+00:00
+[2025-06-14T09:15:59.732+0000] {standard_task_runner.py:63} INFO - Started process 628 to run task
+[2025-06-14T09:15:59.735+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'GlobalSuperStore_dw_etl', 'transform.transform_dim_customers', 'scheduled__2025-06-13T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmpxr_z_ibf']
+[2025-06-14T09:15:59.737+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask transform.transform_dim_customers
+[2025-06-14T09:15:59.786+0000] {task_command.py:426} INFO - Running <TaskInstance: GlobalSuperStore_dw_etl.transform.transform_dim_customers scheduled__2025-06-13T00:00:00+00:00 [running]> on host f3cca4675eb8
+[2025-06-14T09:15:59.868+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='GlobalSuperStore_dw_etl' AIRFLOW_CTX_TASK_ID='transform.transform_dim_customers' AIRFLOW_CTX_EXECUTION_DATE='2025-06-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-13T00:00:00+00:00'
+[2025-06-14T09:15:59.869+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-14T09:16:00.271+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-14T09:16:00.279+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-14T09:16:00.286+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-14T09:16:00.310+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-14T09:16:00.313+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-14T09:16:00.314+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in execute
+    cur.execute(*args, **kwargs)
+psycopg2.errors.UndefinedTable: relation "stg_customer" does not exist
+LINE 1: SELECT * FROM stg_Customer
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform_dim_customers.py", line 14, in transform_dim_customers
+    df = staging_operator.get_data_to_pd("SELECT * FROM stg_Customer")
+  File "/opt/airflow/plugins/postgresql_operator.py", line 15, in get_data_to_pd
+    return self.hook.get_pandas_df(sql)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 263, in get_pandas_df
+    return psql.read_sql(sql, con=conn, params=parameters, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 564, in read_sql
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2078, in read_query
+    cursor = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2030, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT * FROM stg_Customer': relation "stg_customer" does not exist
+LINE 1: SELECT * FROM stg_Customer
+                      ^
+
+[2025-06-14T09:16:00.359+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=GlobalSuperStore_dw_etl, task_id=transform.transform_dim_customers, run_id=scheduled__2025-06-13T00:00:00+00:00, execution_date=20250613T000000, start_date=20250614T091559, end_date=20250614T091600
+[2025-06-14T09:16:00.375+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 19 for task transform.transform_dim_customers (Execution failed on sql 'SELECT * FROM stg_Customer': relation "stg_customer" does not exist
+LINE 1: SELECT * FROM stg_Customer
+                      ^
+; 628)
+[2025-06-14T09:16:00.430+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-14T09:16:00.447+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-14T09:16:00.452+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

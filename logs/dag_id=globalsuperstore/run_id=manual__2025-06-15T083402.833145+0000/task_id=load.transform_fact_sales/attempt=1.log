@@ -1,0 +1,67 @@
+[2025-06-15T08:34:26.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-15T08:34:26.225+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:34:02.833145+00:00 [queued]>
+[2025-06-15T08:34:26.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:34:02.833145+00:00 [queued]>
+[2025-06-15T08:34:26.239+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-15T08:34:26.255+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load.transform_fact_sales> on 2025-06-15 08:34:02.833145+00:00
+[2025-06-15T08:34:26.260+0000] {standard_task_runner.py:63} INFO - Started process 931 to run task
+[2025-06-15T08:34:26.265+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalsuperstore', 'load.transform_fact_sales', 'manual__2025-06-15T08:34:02.833145+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/global_superstore_dw_etl.py', '--cfg-path', '/tmp/tmpxhcr8zm2']
+[2025-06-15T08:34:26.268+0000] {standard_task_runner.py:91} INFO - Job 101: Subtask load.transform_fact_sales
+[2025-06-15T08:34:26.316+0000] {task_command.py:426} INFO - Running <TaskInstance: globalsuperstore.load.transform_fact_sales manual__2025-06-15T08:34:02.833145+00:00 [running]> on host f3cca4675eb8
+[2025-06-15T08:34:26.399+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='globalsuperstore' AIRFLOW_CTX_TASK_ID='load.transform_fact_sales' AIRFLOW_CTX_EXECUTION_DATE='2025-06-15T08:34:02.833145+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-15T08:34:02.833145+00:00'
+[2025-06-15T08:34:26.400+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-15T08:34:26.422+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:34:26.430+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:34:26.438+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:34:26.453+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:34:26.538+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-06-15T08:34:26.544+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-06-15T08:34:26.548+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-15T08:34:26.549+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in execute
+    cur.execute(*args, **kwargs)
+psycopg2.errors.UndefinedColumn: column "location_id" does not exist
+LINE 1: SELECT Location_ID, City, State, Country FROM warehouse.dim_...
+               ^
+HINT:  Perhaps you meant to reference the column "dim_location.Location_ID".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform_fact_sales.py", line 15, in transform_fact_sales
+    df_location = warehouse_operator.get_data_to_pd('SELECT Location_ID, City, State, Country FROM warehouse.dim_location')
+  File "/opt/airflow/plugins/postgresql_operator.py", line 15, in get_data_to_pd
+    return self.hook.get_pandas_df(sql)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 263, in get_pandas_df
+    return psql.read_sql(sql, con=conn, params=parameters, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 564, in read_sql
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2078, in read_query
+    cursor = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2030, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT Location_ID, City, State, Country FROM warehouse.dim_location': column "location_id" does not exist
+LINE 1: SELECT Location_ID, City, State, Country FROM warehouse.dim_...
+               ^
+HINT:  Perhaps you meant to reference the column "dim_location.Location_ID".
+
+[2025-06-15T08:34:26.568+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=globalsuperstore, task_id=load.transform_fact_sales, run_id=manual__2025-06-15T08:34:02.833145+00:00, execution_date=20250615T083402, start_date=20250615T083426, end_date=20250615T083426
+[2025-06-15T08:34:26.583+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 101 for task load.transform_fact_sales (Execution failed on sql 'SELECT Location_ID, City, State, Country FROM warehouse.dim_location': column "location_id" does not exist
+LINE 1: SELECT Location_ID, City, State, Country FROM warehouse.dim_...
+               ^
+HINT:  Perhaps you meant to reference the column "dim_location.Location_ID".
+; 931)
+[2025-06-15T08:34:26.599+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-15T08:34:26.615+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-15T08:34:26.618+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
