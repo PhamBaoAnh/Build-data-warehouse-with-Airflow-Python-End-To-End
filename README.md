@@ -13,3 +13,14 @@ Power BI provided the final layer of visualization, offering insightful sales an
 
 ![image](https://github.com/user-attachments/assets/45bd11be-7501-4d12-b33a-47399a763518)
 
+# Airflow
+![Image](https://github.com/user-attachments/assets/6cb80da3-b49c-4dc6-a5e7-ddad4472e1e4)
+
+# Dashboard with Power BI
+
+![Image](https://github.com/user-attachments/assets/1ddd3953-787f-4ca9-919a-51743c454e5a)
+<Br>
+![Image](https://github.com/user-attachments/assets/7358654c-68c4-4ebb-bb2b-890367772cd9)
+<Br>
+![Image](https://github.com/user-attachments/assets/d60323e9-591b-4b2c-986c-671b87707894)
+
